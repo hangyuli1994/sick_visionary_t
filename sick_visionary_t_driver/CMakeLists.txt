@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   roscpp
   roslaunch
+  sensor_msgs
 )
 
 find_package(Boost REQUIRED COMPONENTS system)
@@ -13,7 +14,7 @@ find_package(OpenCV REQUIRED)
 
 catkin_package(
   INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp
+  CATKIN_DEPENDS roscpp sensor_msgs
 )
 
 ### BUILD ###
