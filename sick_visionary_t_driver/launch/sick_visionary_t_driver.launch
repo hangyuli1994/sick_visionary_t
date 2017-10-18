@@ -2,12 +2,12 @@
 <launch>
 
   <arg name="camera" default="sick_visionary_t_driver" />
+  <arg name="device_ip" default="192.168.1.10" />
+  <arg name="frame_id" default="camera" />
 
   <node pkg="sick_visionary_t_driver" type="sick_visionary_t_driver_node" name="$(arg camera)" output="screen" >
-    <!-- IP address if the Visionary-T device, default: 192.168.1.10 -->
-    <param name="remote_device_ip" value="192.168.1.10" />
-
-    <param name="frame_id" value="camera" />
+    <param name="remote_device_ip" value="$(arg device_ip)" />
+    <param name="frame_id" value="$(arg frame_id)" />
   </node>
 
 </launch>
