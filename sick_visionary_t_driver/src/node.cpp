@@ -166,7 +166,7 @@ void publish_frame(const Driver_3DCS::Data &data) {
 //		msg->header = header;
 //		std::cout<<"here"<<std::endl;	
 	        cv::Mat mat = data.get_distance();	
-//		std::cout<<"mat:"<<mat<<"total "<<mat.total()<<std::endl;
+		std::cout<<"mat:"<<mat<<"total "<<mat.total()<<std::endl;
 		//msg->header = header;
 	        int height = 144;
         	int width = 176;
@@ -180,6 +180,7 @@ void publish_frame(const Driver_3DCS::Data &data) {
             	scan_msg.angle_increment = 90/width * (3.14/180);
             	scan_msg.range_min = 10.0; //mm
             	scan_msg.range_max = 10000; //mm 
+		scan_msg.header = header; 
 //	        std::cout<<msg->data.size()<<std::endl;
 		for (int i =0;i<width;i++)
         {
@@ -296,8 +297,8 @@ const float f2rc = data.getCameraParameters().f2rc / 1000.f; // since f2rc is gi
 	}
 	
 	if(!published_anything) {
-		std::cout<<"here"<<std::endl;
-		if(g_control) g_control->stopStream();
+//		std::cout<<"here"<<std::endl;
+	if(g_control) g_control->stopStream();
 	}
 }
 

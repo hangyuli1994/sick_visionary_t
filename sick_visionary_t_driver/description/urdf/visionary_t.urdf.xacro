@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot name="r3_mill_tool" xmlns:xacro="http://wiki.ros.org/xacro">
+  
+  <link name="base_link"/>
+
+  <xacro:include filename="$(find sick_visionary_t_driver)/description/urdf/visionary_t_macro.urdf.xacro" />
+
+  <xacro:sick_visionary_t parent="base_link" has_holder="true" holder_tilt="${-25/180*pi}">
+    <origin xyz="0.085 0 1.85" rpy="${pi} 0 0" />
+  </xacro:sick_visionary_t>
+
+</robot>
