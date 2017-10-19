@@ -206,18 +206,6 @@ void publish_frame(const Driver_3DCS::Data &data) {
 //        	std::cout<<scan_msg.ranges[0]<<std::endl;
 	g_pub_laserscan.publish(scan_msg);	
 
-/*        depthimage_to_laserscan::DepthImageToLaserScan depthToLaserScan;// = new depthimage_to_laserscan::DepthImageToLaserScan();
-	std::cout<<"noch ok"<<std::endl;
-	const float scan_time = 1.0/30.0;
-	depthToLaserScan.set_scan_time(scan_time);
-	depthToLaserScan.set_scan_height(1);
-	const float range_min = 5.0;
-	const float range_max = 5000.0;
-	depthToLaserScan.set_range_limits(range_min,range_max);
-	sensor_msgs::LaserScanPtr scan_msg =  depthToLaserScan.convert_msg(msg, ciPtr);
-	std::cout<<"after convert msg" <<std::endl;*/
-//	g_pub_laserscan.publish(scan_msg);
-//	std::cout<<"after pub"<<std::endl;
 }
 if(g_pub_points.getNumSubscribers()>0) {
 	published_anything = true;
