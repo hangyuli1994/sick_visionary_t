@@ -5,10 +5,10 @@
 
   <arg name="camera" default="sick_visionary_t_driver" />
   <param name="sensor_description" command="$(find xacro)/xacro.py --inorder '$(find sick_visionary_t_driver)/description/urdf/visionary_t.urdf.xacro'" />
-
+  <arg name="device_ip" default="141.3.80.137"/>
   <node pkg="sick_visionary_t_driver" type="sick_visionary_t_driver_node" name="$(arg camera)" output="screen" >
     <!-- IP address if the Visionary-T device, default: 192.168.1.10 -->
-    <param name="remote_device_ip" value="141.3.80.137" />
+    <param name="remote_device_ip" value="$(arg device_ip)" />
     <param name="frame_id" value="camera" />
   </node>
   
