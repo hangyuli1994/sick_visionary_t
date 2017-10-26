@@ -19,5 +19,6 @@
   <depend>roscpp</depend>
   <depend>roslaunch</depend>
   <depend>sensor_msgs</depend>
+  <exec_depend>robot_state_publisher</exec_depend>
 
 </package>
