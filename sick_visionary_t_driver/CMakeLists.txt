@@ -27,7 +27,6 @@ add_executable(sick_visionary_t_driver_node src/node.cpp src/driver.cpp)
 
 target_link_libraries(sick_visionary_t_driver_node
   ${catkin_LIBRARIES}
-  ${OpenCV_LIBS}
 )
 
 ### TEST ###
